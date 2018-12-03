@@ -14,8 +14,10 @@ class NoteViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Note.objects.all()
 
+    '''
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+    '''
 
 class RegistrationAPI(generics.GenericAPIView):
     serializer_class = CreateUserSerializer
